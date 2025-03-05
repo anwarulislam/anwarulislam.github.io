@@ -26,7 +26,7 @@ function toggleDarkMode() {
 }
 
 function animateColors() {
-  currentHue = (currentHue + 1) % 360;
+  currentHue = (currentHue + 10) % 360;
   updateColors(currentHue);
 }
 
@@ -43,7 +43,7 @@ if (storedDarkMode !== null) {
 updateColors(currentHue);
 
 // Update colors every 300ms
-setInterval(animateColors, 150);
+setInterval(animateColors, 1000);
 
 // Listen for system dark mode changes
 window
