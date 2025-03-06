@@ -1,5 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("../fonts/icomoon.css");
 
 @keyframes gradient {
   0% {
@@ -37,13 +36,17 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: calc(10px + 0.33vw);
   -webkit-font-smoothing: antialiased;
-  padding: 3vh 3vw;
   color: var(--color-secondary);
   background-color: var(--color-primary);
   transition: background-color 0.3s ease, color 2s ease;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
+  padding: 3vh 3vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -66,14 +69,22 @@ main {
 }
 
 .personal-profile_image {
-  width: 100px;
-  height: 100px;
-  border-image: linear-gradient(
-      45deg,
-      var(--color-accent),
-      var(--color-tertiary)
-    )
-    1;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 300px;
+  border-bottom-right-radius: 50%;
+  /* filter with dynamic color changing */
+  filter: drop-shadow(0 0 0.8rem var(--color-secondary));
+  margin-bottom: 1rem;
+  animation: gradient 15s ease infinite;
+  object-fit: cover;
+  opacity: 0.95;
+  transition: all 0.5s ease;
+}
+
+.personal-profile_image:hover {
+  filter: drop-shadow(0 0 2rem var(--color-secondary)) brightness(1.1);
+  opacity: 1;
 }
 
 .profile-info {
@@ -157,11 +168,8 @@ a:hover:after {
 }
 
 @media (min-width: 800px) {
-  body {
-    padding: 5vh 10vw;
-  }
-
   main {
+    padding: 5vh 10vw;
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -176,10 +184,7 @@ a:hover:after {
   }
 
   .personal-profile_image {
-    width: 150px;
-    height: 150px;
     margin-bottom: 0;
-    margin-right: 2rem;
   }
 
   .personal-profile__name {

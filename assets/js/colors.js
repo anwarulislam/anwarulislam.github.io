@@ -26,7 +26,7 @@ function toggleDarkMode() {
 }
 
 function animateColors() {
-  currentHue = (currentHue + 10) % 360;
+  currentHue = (currentHue + 5) % 360;
   updateColors(currentHue);
 }
 
