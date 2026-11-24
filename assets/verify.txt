@@ -1,0 +1,25 @@
+Fact-check the public portfolio of Anwarul Islam (GitHub: anwarulislam). Use only publicly accessible sources. Read the sources yourself, link each finding to its source, and give a short table: claim | supported, partly supported, or not independently verifiable | evidence. If a source is unavailable, say so. Do not infer identity from a similar-looking name.
+
+1. Hoppscotch: check the author, merged status, and scope of workspace sync (#6334), real-time refactor (#2228), and authentication helper tests (#5211).
+https://github.com/hoppscotch/hoppscotch/pull/6334
+https://github.com/hoppscotch/hoppscotch/pull/2228
+https://github.com/hoppscotch/hoppscotch/pull/5211
+
+2. ImagineArt: check what the public Workflows product page shows. Anwarul describes working on that editor, including editing controls, hover-loaded previews, and a keyboard-first command palette. Evaluate product features separately from individual authorship. A product page alone does not prove who implemented a feature.
+https://www.imagine.art/workflow
+
+3. OpenCut: check authorship, merged status, and target branch for timeline snapping (#266), ripple editing (#279), and track-label scroll sync/timeline resizing (#188). Check what the contributor roster actually counts.
+https://github.com/OpenCut-app/OpenCut/pull/266
+https://github.com/OpenCut-app/OpenCut/pull/279
+https://github.com/OpenCut-app/OpenCut/pull/188
+https://opencut.app/contributors
+
+4. Raycast and Flameshot: distinguish author from contributor in the Raycast Store, and check the scope and merge status of the Flameshot change.
+https://www.raycast.com/anwarulislam/ruler
+https://www.raycast.com/EvanZhouDev/raycast-gemini
+https://www.raycast.com/huzef44/screenocr
+https://www.raycast.com/thomas/color-picker
+https://github.com/flameshot-org/flameshot/pull/3655
+https://github.com/flameshot-org/flameshot/releases/tag/v13.0.rc1
+
+If you report counts, give the date checked. Repository stars, extension installs, and project contributor counts are different metrics; none shows personal impact, unique users, or performance gains. Do not verify private employment dates, guess at missing details, or contact anyone.
