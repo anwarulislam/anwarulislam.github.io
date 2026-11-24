@@ -4,58 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Anwarul Islam, product engineer in Dhaka, Bangladesh. Work on creative canvases, browser video editing, and open-source developer tools.">
-<title>Anwarul Islam · Product Engineer</title>
+<title>AI · Anwarul Islam, Product Engineer</title>
+<link rel="icon" href="./assets/initials.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./portfolio.css">
-<link rel="stylesheet" href="./postcard.css">
+<link rel="stylesheet" href="./initials.css">
+<link rel="stylesheet" href="./finder.css">
 <script defer src="./portfolio.js"></script>
-<script defer src="./postcard.js"></script>
+<script defer src="./initials.js"></script>
+<script defer src="./finder.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header wrap"><a class="brand" href="#top"><span class="mark" aria-hidden="true">A</span> Anwarul Islam</a><nav aria-label="Main"><a href="#work">Work</a><a class="school-nav" href="#school">10 Minute School</a><a href="#resume">Résumé</a><a class="nav-contact" href="https://www.linkedin.com/in/anwaarulislaam/">Contact</a></nav></header>
+<header class="site-header wrap">
+  <a class="brand" href="#top" aria-label="Anwarul Islam, home"><span class="brand-mark" aria-hidden="true">A<span>I</span></span><span>Anwarul Islam</span></a>
+  <nav aria-label="Main"><button type="button" class="finder-trigger" hidden data-finder aria-haspopup="dialog">Work index <kbd aria-hidden="true">A I</kbd></button><a href="#resume">Résumé</a><a class="nav-contact" href="https://www.linkedin.com/in/anwaarulislaam/">Contact ↗</a></nav>
+</header>
 <main id="main">
 <section class="hero wrap" id="top" aria-labelledby="hero-title">
 <div><p class="eyebrow">PRODUCT ENGINEER <span> / </span> DHAKA, BD</p><h1 id="hero-title">I build tools<br>people <em>build with.</em></h1><p class="lede">I’m Anwarul, a frontend and product engineer working on creative canvases, browser video editing, and open-source developer tools.</p><div class="actions"><a class="button primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a><a class="button" href="./assets/anwarul-islam-resume.pdf" download>Download résumé</a></div></div>
-<section class="desk" id="postcard" aria-labelledby="desk-title">
-  <header class="desk-head"><h2 id="desk-title">Postcard from Dhaka</h2><span lang="bn">ঢাকা</span></header>
-  <div class="photo-stage" id="stage">
-    <img id="poster" src="assets/dhaka-postcard.jpg" width="960" height="540" alt="A rickshaw winds between painted buses in Gulistan, Dhaka.">
-    <video id="ride" preload="none" muted playsinline poster="assets/dhaka-postcard.jpg" data-src="assets/dhaka-ride.mp4" aria-label="A seven-second rickshaw ride in Dhaka"></video>
-    <canvas id="measure" width="960" height="540" hidden aria-label="Drag either ruler endpoint on the photograph"></canvas>
-  </div>
-  <p class="route"><span>Gulistan → Bangabhaban</span><button id="save" type="button">Save frame ↓</button></p>
-  <div class="instrument">
-    <div class="modes" role="group" aria-label="Postcard tools">
-      <button data-mode="cut" aria-pressed="true">Cut</button><button data-mode="crop" aria-pressed="false">Crop</button><button data-mode="ruler" aria-pressed="false">Ruler</button><button data-mode="sync" aria-pressed="false">Sync</button>
-    </div>
-    <div id="cut" class="panel">
-      <div class="row"><button id="play">▶ Play cut</button><label><input id="snap" type="checkbox" checked> Snap</label></div>
-      <div class="track"><i id="playhead"></i><label class="visually-hidden" for="trim">Trim the end of the clip</label><input id="trim" type="range" min="0.25" max="7" value="7" step="0.05"></div>
-      <div class="readout"><span>Drag to trim the end</span><output for="trim" id="duration">7.00 s</output></div>
-      <a href="https://github.com/OpenCut-app/OpenCut/pull/266">Timeline snapping at OpenCut ↗</a>
-    </div>
-    <div id="crop" class="panel" hidden>
-      <div class="row"><label for="format">Crop node</label><select id="format"><option value="wide">Landscape · 16∶9</option><option value="square">Square · 1∶1</option></select></div>
-      <p class="flow" id="flow">Source → Preview</p>
-      <a href="https://www.imagine.art/workflow">The canvas I worked on at ImagineArt ↗</a>
-    </div>
-    <div id="ruler" class="panel" hidden>
-      <p>Drag the endpoints to measure the frame.</p>
-      <div class="row"><label for="endpoint">Arrow keys move</label><select id="endpoint"><option value="0">First point</option><option value="1">Second point</option></select><output id="distance"></output></div>
-      <a href="https://www.raycast.com/anwarulislam/ruler">My native Ruler for Raycast ↗</a>
-    </div>
-    <div id="sync" class="panel" hidden>
-      <div class="sync-pair"><canvas width="120" height="120" aria-label="Web preview"></canvas><canvas width="120" height="120" aria-label="Desktop preview"></canvas><span>Web</span><span>Desktop</span></div>
-      <label for="pan">Shared crop position</label><input type="range" id="pan" min="0" max="100" value="50">
-      <p>Both previews read the same crop. At Hoppscotch I moved web and desktop workspace sync into one shared layer.</p>
-      <a href="https://github.com/hoppscotch/hoppscotch/pull/6334">Read the sync refactor ↗</a>
-    </div>
-  </div>
-  <details class="credit"><summary>Film credit</summary><p>Excerpt and frame crops from <a href="https://commons.wikimedia.org/wiki/File:Rikshaw_Ride_in_Dhaka_(Gulistan_to_Bangabhaban).webm">Lightdn’s rickshaw ride</a>. Film, edits and exported frames licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></details>
-  <p id="desk-status" role="status"></p>
+<figure class="initials" id="initials">
+  <div class="initials-art" aria-hidden="true"><span>AI</span></div>
+  <figcaption><label for="initials-axis">Unfold my initials</label>
+    <input id="initials-axis" type="range" min="0" max="100" value="0" aria-valuetext="Initials, AI">
+    <button type="button" class="initials-toggle" aria-label="Reveal full name">↗</button>
+  </figcaption>
+</figure>
 </section>
-</section>
-<section id="work" class="work wrap" aria-labelledby="work-title"><div class="section-head"><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">What I’ve shipped</h2><p>Products I’ve worked on, with public source material where available.</p></div>
+<section id="work" class="work wrap" aria-labelledby="work-title"><div class="section-head"><p class="eyebrow">Selected work</p><h2 id="work-title">What I’ve shipped</h2><p>Products I’ve worked on, with public source material where available.</p></div>
 <article class="school" id="school">
   <div class="school-intro"><p class="eyebrow">EDUCATION TECHNOLOGY · 2018–2024</p><h3>10 Minute School</h3>
   <p>I worked on what a student could do during a lesson, from commenting in a live class to opening an interactive SmartBook. Underneath it all, I led the move from WordPress to Angular.</p>
@@ -67,14 +42,14 @@
   <p class="afterword">As a consultant, I stayed on to advise the team on frontend architecture, rendering performance, and component reuse.</p></div>
 </article>
 <div class="cards">
-<article class="card green"><div class="card-meta"><span>01 / DEVELOPER TOOLS</span><span>Vue · TypeScript</span></div><h3>Hoppscotch</h3><p>Consolidated workspace sync for collections, environments, request history, and settings into a shared layer for the web and desktop clients. Refactored the real-time API workspace and added authentication helper tests.</p><a class="try" href="#postcard" data-open="sync">Try workspace sync ↑</a><div class="links"><a href="https://github.com/hoppscotch/hoppscotch/pull/6334">Workspace sync</a><a href="https://github.com/hoppscotch/hoppscotch/pull/2228">Real-time refactor</a><a href="https://github.com/hoppscotch/hoppscotch/pull/5211">Unit tests</a></div></article>
-<article class="card lilac"><div class="card-meta"><span>02 / CREATIVE AI</span><span>React · Next.js · React Flow</span></div><h3>ImagineArt Workflows</h3><p>I worked on a node-based editor for image and video generation. My work included crop and filter controls, video trimming, hover-loaded previews, and a keyboard-first command palette.</p><p class="note">My account of the work; the product page independently shows the editor.</p><a class="try" href="#postcard" data-open="crop">Try the crop node ↑</a><div class="links"><a href="https://www.imagine.art/workflow">View the product</a></div></article>
-<article class="card sand"><div class="card-meta"><span>03 / BROWSER VIDEO</span><span>React · TypeScript</span></div><h3>OpenCut</h3><p>Built timeline snapping to the grid, clip edges, and playhead, plus ripple editing. The two changes merged into staging; track-label scroll sync and timeline resizing merged into main.</p><a class="try" href="#postcard" data-open="cut">Make a cut ↑</a><div class="links"><a href="https://github.com/OpenCut-app/OpenCut/pull/266">Snapping</a><a href="https://github.com/OpenCut-app/OpenCut/pull/279">Ripple editing</a><a href="https://github.com/OpenCut-app/OpenCut/pull/188">Timeline UX</a><a href="https://opencut.app/contributors">Contributor roster</a></div></article>
-<article class="card blue"><div class="card-meta"><span>04 / DESKTOP TOOLS</span><span>Swift · AppKit · TypeScript</span></div><h3>Raycast Ruler</h3><p>Built a native macOS screen ruler with a magnifier, pixel measurement, and a clipboard shortcut. The extension has 45,000+ installs. I also contributed to Google Gemini, ScreenOCR, and Color Picker.</p><a class="try" href="#postcard" data-open="ruler">Measure a frame ↑</a><div class="links"><a href="https://www.raycast.com/anwarulislam/ruler">Ruler</a><a href="https://www.raycast.com/EvanZhouDev/raycast-gemini">Gemini</a><a href="https://www.raycast.com/huzef44/screenocr">ScreenOCR</a><a href="https://www.raycast.com/thomas/color-picker">Color Picker</a></div></article>
+<article class="card" id="hoppscotch"><div class="work-print" aria-hidden="true"><i></i><i></i><i></i></div><div class="card-copy"><div class="card-meta"><span>Developer Tools</span><span>Vue · TypeScript</span></div><h3>Hoppscotch</h3><p>Consolidated workspace sync for collections, environments, request history, and settings into a shared layer for the web and desktop clients. Refactored the real-time API workspace and added authentication helper tests.</p><div class="links"><a href="https://github.com/hoppscotch/hoppscotch/pull/6334">Workspace sync</a><a href="https://github.com/hoppscotch/hoppscotch/pull/2228">Real-time refactor</a><a href="https://github.com/hoppscotch/hoppscotch/pull/5211">Unit tests</a></div></div></article>
+<article class="card" id="imagineart"><div class="work-print" aria-hidden="true"><i></i><i></i><i></i></div><div class="card-copy"><div class="card-meta"><span>Creative Ai</span><span>React · Next.js · React Flow</span></div><h3>ImagineArt Workflows</h3><p>I worked on a node-based editor for image and video generation. My work included crop and filter controls, video trimming, hover-loaded previews, and a keyboard-first command palette.</p><p class="note">My account of the work; the product page independently shows the editor.</p><div class="links"><a href="https://www.imagine.art/workflow">View the product</a></div></div></article>
+<article class="card" id="opencut"><div class="work-print" aria-hidden="true"><i></i><i></i><i></i></div><div class="card-copy"><div class="card-meta"><span>Browser Video</span><span>React · TypeScript</span></div><h3>OpenCut</h3><p>Built timeline snapping to the grid, clip edges, and playhead, plus ripple editing. The two changes merged into staging; track-label scroll sync and timeline resizing merged into main.</p><div class="links"><a href="https://github.com/OpenCut-app/OpenCut/pull/266">Snapping</a><a href="https://github.com/OpenCut-app/OpenCut/pull/279">Ripple editing</a><a href="https://github.com/OpenCut-app/OpenCut/pull/188">Timeline UX</a><a href="https://opencut.app/contributors">Contributor roster</a></div></div></article>
+<article class="card" id="raycast"><div class="work-print" aria-hidden="true"><i></i><i></i></div><div class="card-copy"><div class="card-meta"><span>Desktop Tools</span><span>Swift · AppKit · TypeScript</span></div><h3>Raycast Ruler</h3><p>Built a native macOS screen ruler with a magnifier, pixel measurement, and a clipboard shortcut. The extension has 45,000+ installs. I also contributed to Google Gemini, ScreenOCR, and Color Picker.</p><div class="links"><a href="https://www.raycast.com/anwarulislam/ruler">Ruler</a><a href="https://www.raycast.com/EvanZhouDev/raycast-gemini">Gemini</a><a href="https://www.raycast.com/huzef44/screenocr">ScreenOCR</a><a href="https://www.raycast.com/thomas/color-picker">Color Picker</a></div></div></article>
 </div>
-<div class="extra"><p><strong>Also:</strong> I contributed a <a href="https://github.com/flameshot-org/flameshot/pull/3655">settings UI improvement to Flameshot</a>.</p></div>
+<div class="extra" id="flameshot"><p><strong>Also:</strong> I contributed a <a href="https://github.com/flameshot-org/flameshot/pull/3655">settings UI improvement to Flameshot</a>.</p></div>
 </section>
-<section id="resume" class="resume" aria-labelledby="resume-title"><div class="wrap resume-inner"><div><p class="eyebrow">02 / RÉSUMÉ &amp; SOURCES</p><h2 id="resume-title">Take the work with you.</h2><p>Download a résumé, copy a plain-text version, or use the source-checking prompt to review the public evidence.</p><a class="button primary" href="./assets/anwarul-islam-resume.pdf" download>Download résumé PDF</a></div>
+<section id="resume" class="resume" aria-labelledby="resume-title"><div class="wrap resume-inner"><div><p class="eyebrow">Résumé &amp; sources</p><h2 id="resume-title">Take the work with you.</h2><p>Download a résumé, copy a plain-text version, or use the source-checking prompt to review the public evidence.</p><a class="button primary" href="./assets/anwarul-islam-resume.pdf" download>Download résumé PDF</a></div>
 <div class="toolbox">
 <details class="tool"><summary>Markdown résumé <span aria-hidden="true">+</span></summary><div class="tool-body"><button type="button" data-copy="resume-text">Copy Markdown</button><textarea id="resume-text" readonly spellcheck="false" aria-label="Résumé Markdown" rows="10"># Anwarul Islam
 

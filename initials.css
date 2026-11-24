@@ -1,0 +1,104 @@
+.initials {
+  --ai-dark: #232721;
+  --ai-light: #f5eddc;
+  --ai-accent: #ff6a4c;
+  position: relative;
+  margin: 0;
+  min-width: 0;
+  background: var(--ai-dark);
+  color: var(--ai-light);
+  border: 1px solid #2b2d25;
+  box-shadow: 4px 4px 0 #d4c7ad;
+}
+.initials-art {
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 640 / 424;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.initials.is-ready .initials-art { cursor: grab; touch-action: pan-y; }
+.initials.is-ready .initials-art.is-dragging { cursor: grabbing; }
+.initials-art > svg { width: 100%; height: 100%; display: block; }
+.initials-art > span { color: var(--ai-light); font: 900 clamp(5rem,15vw,12rem)/1 Arial,sans-serif; letter-spacing: -.08em; }
+.initials figcaption {
+  display: none;
+  grid-template-columns: max-content minmax(50px,1fr) 40px;
+  align-items: center;
+  gap: clamp(10px,2vw,24px);
+  padding: 7px clamp(12px,2.2vw,28px);
+  border-top: 1px solid #727365;
+  background: #2a2d25;
+}
+.initials.is-ready figcaption { display: grid; }
+.initials label {
+  font: 500 clamp(.72rem,1vw,.84rem)/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing: -.02em;
+  color: var(--ai-light);
+}
+.initials input[type=range] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 38px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+.initials input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(to right,var(--ai-accent) var(--ai-axis,0%),#847f72 var(--ai-axis,0%));
+}
+.initials input[type=range]::-moz-range-track { height: 2px; background: #847f72; }
+.initials input[type=range]::-moz-range-progress { height: 2px; background: var(--ai-accent); }
+.initials input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 18px;
+  margin-top: -8px;
+  border: 2px solid #232721;
+  outline: 1px solid var(--ai-accent);
+  background: var(--ai-accent);
+  border-radius: 0;
+}
+.initials input[type=range]::-moz-range-thumb {
+  width: 11px;
+  height: 14px;
+  border: 2px solid #232721;
+  outline: 1px solid var(--ai-accent);
+  background: var(--ai-accent);
+  border-radius: 0;
+}
+.initials .initials-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ai-light);
+  font: normal 1.45rem/1 Arial,sans-serif;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+.initials-toggle:hover { color: var(--ai-accent); }
+.initials-toggle.is-open { transform: rotate(180deg); }
+.initials :is(button,input):focus-visible { outline: 2px solid var(--ai-accent); outline-offset: 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .initials .initials-toggle { transition: none; }
+}
+
+/* Let the impressions settle into register once as the specimen appears. */
+@media (prefers-reduced-motion: no-preference) {
+  .initials.is-ready #ai-first-plate { animation: register-first .72s cubic-bezier(.22,.9,.2,1) backwards; }
+  .initials.is-ready #ai-second-plate { animation: register-second .84s cubic-bezier(.22,.9,.2,1) backwards; }
+  @keyframes register-first { from { translate: -18px 9px; } to { translate: 0 0; } }
+  @keyframes register-second { from { translate: 26px -14px; } to { translate: 0 0; } }
+}
