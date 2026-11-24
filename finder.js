@@ -35,23 +35,24 @@
     return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
   for (const [id, title, detail, keywords] of [
-    ['school', '10 Minute School', 'Software Engineer & Frontend Engineering Consultant', 'education Angular WordPress SmartBooks live class certificates PWA SSR Puppeteer'],
     ['hoppscotch', 'Hoppscotch', 'Product Engineer', 'API web desktop Vue TypeScript sync GraphQL WebSocket SSE MQTT'],
     ['imagineart', 'ImagineArt Workflows', 'Senior Frontend Engineer', 'React Next.js React Flow canvas nodes editing keyboard command palette'],
-    ['opencut', 'OpenCut', 'Browser video editor', 'React TypeScript timeline snapping ripple editing'],
+    ['school', '10 Minute School', 'Software Engineer & Frontend Engineering Consultant', 'education Angular WordPress SmartBooks live class certificates PWA SSR Puppeteer'],
     ['raycast', 'Raycast', 'Extension creator & contributor', 'macOS Swift AppKit Ruler image Color Picker ScreenOCR Gemini'],
-    ['flameshot', 'Flameshot', 'Cross-platform screenshot tool', 'C++ Qt settings UI contributor']
+    ['opencut', 'OpenCut', 'Browser video editor', 'React TypeScript timeline snapping ripple editing'],
+    ['flameshot', 'Flameshot', 'Cross-platform screenshot tool', 'C++ Qt settings UI contributor'],
   ]) {
     const section = document.getElementById(id);
     if (!section) continue;
-    add(title, detail, '#' + id, keywords);
+    const group = section.closest('#open-source') ? 'Open source' : 'Work experience';
+    add(title, group + ' · ' + detail, '#' + id, keywords + ' ' + group.replace(' ', '-'));
   }
   add('Résumé', 'Experience, skills & downloadable PDF', '#resume');
   const markdown = document.querySelector('#resume-text')?.value || '';
   for (const match of markdown.matchAll(/^### \[(Codementor|Banglalink)\]\((https:[^)]+)\) \| ([^|\n]+)/gm)) {
     add(match[1], match[3].trim() + ' · company website', match[2], 'earlier experience');
   }
-  for (const id of ['school', 'hoppscotch', 'imagineart', 'opencut', 'raycast', 'flameshot']) {
+  for (const id of ['hoppscotch', 'imagineart', 'school', 'raycast', 'opencut', 'flameshot']) {
     const project = records.find(entry => entry.href === '#' + id);
     if (!project) continue;
     const links = document.getElementById(id).querySelectorAll('a[href^="https://"]');
