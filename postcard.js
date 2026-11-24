@@ -16,6 +16,28 @@
   let playbackFrame = 0;
   let trimAnchor = 0;
 
+  // A local blob supports frame seeking even when the CDN sends the whole clip.
+  let clipReady;
+  let pendingAction = 0;
+  function loadClip() {
+    if (!clipReady) {
+      clipReady = (async () => {
+        const response = await fetch(video.dataset.src);
+        if (!response.ok) throw new Error('Video unavailable');
+        const blob = await response.blob();
+        await new Promise((resolve, reject) => {
+          const loaded = () => { video.removeEventListener('error', failed); resolve(); };
+          const failed = () => { video.removeEventListener('loadeddata', loaded); reject(new Error('Video unavailable')); };
+          video.addEventListener('loadeddata', loaded, {once: true});
+          video.addEventListener('error', failed, {once: true});
+          video.preload = 'auto';
+          video.src = URL.createObjectURL(blob);
+        });
+      })().catch(error => { clipReady = undefined; throw error; });
+    }
+    return clipReady;
+  }
+
   function source() {
     return video.readyState >= 2 ? video : poster;
   }
@@ -80,6 +102,7 @@
   }
 
   function selectMode(next, focus) {
+    pendingAction++;
     mode = next;
     video.pause();
     for (const button of buttons) {
@@ -114,7 +137,10 @@
   });
   video.loop = true;
   byId('play').addEventListener('click', async () => {
+    const action = ++pendingAction;
     if (!video.paused) return video.pause();
+    try { await loadClip(); } catch { byId('desk-status').textContent = 'The film could not load. Try Play again.'; return; }
+    if (action !== pendingAction) return;
     if (video.currentTime >= Number(trim.value) - .06) video.currentTime = 0;
     try { await video.play(); } catch { byId('desk-status').textContent = 'Playback is unavailable. You can still crop, measure, and save the photograph.'; }
   });
@@ -122,7 +148,8 @@
     trimAnchor = video.currentTime;
     video.pause();
   });
-  trim.addEventListener('input', event => {
+  trim.addEventListener('input', async event => {
+    const action = ++pendingAction;
     let end = Number(trim.value);
     if (byId('snap').checked && event.isTrusted && trim.matches(':active')) {
       const marks = [trimAnchor, 1, 2, 3, 4, 5, 6, 7];
@@ -132,7 +159,8 @@
     trim.parentElement.style.setProperty('--cut-end', (end / 7 * 100) + '%');
     byId('duration').value = end.toFixed(2) + ' s';
     video.pause();
-    video.preload = 'auto';
+    try { await loadClip(); } catch { byId('desk-status').textContent = 'The film could not load. Try Play again.'; return; }
+    if (action !== pendingAction) return;
     video.currentTime = Math.max(0, end - .045);
   });
   video.addEventListener('seeked', () => { updateHead(); render(); });
