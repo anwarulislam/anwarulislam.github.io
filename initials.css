@@ -97,8 +97,8 @@
 
 /* Let the impressions settle into register once as the specimen appears. */
 @media (prefers-reduced-motion: no-preference) {
-  .initials.is-ready #ai-first-plate { animation: register-first .72s cubic-bezier(.22,.9,.2,1) backwards; }
-  .initials.is-ready #ai-second-plate { animation: register-second .84s cubic-bezier(.22,.9,.2,1) backwards; }
+  .initials.is-opening #ai-first-plate { animation: register-first .72s cubic-bezier(.22,.9,.2,1) backwards; }
+  .initials.is-opening #ai-second-plate { animation: register-second .84s cubic-bezier(.22,.9,.2,1) backwards; }
   @keyframes register-first { from { translate: -18px 9px; } to { translate: 0 0; } }
   @keyframes register-second { from { translate: 26px -14px; } to { translate: 0 0; } }
 }

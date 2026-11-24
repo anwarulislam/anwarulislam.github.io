@@ -62,6 +62,7 @@
   const clamp = value => Math.max(0, Math.min(1, value));
   const mix = (a,b,t) => a + (b-a)*t;
   const ease = t => t*t*(3-2*t);
+  let observer;
   let frame = 0;
   let progress = 0;
   let gesture = null;
@@ -71,8 +72,9 @@
     const t = ease(progress);
     const fan = Math.sin(Math.PI * t);
     for (const plate of plates) {
-      const [x,y,scale] = plate.start.map((v,i) => mix(v, plate.end[i], t));
       const isA = plate.letter === 'a';
+      const travel = ease(clamp((progress - (isA ? 0 : .13)) / .70));
+      const [x,y,scale] = plate.start.map((v,i) => mix(v, plate.end[i], travel));
       plate.group.setAttribute('transform', `translate(${x} ${y}) scale(${scale})`);
       for (const [i,impression] of plate.impressions.entries()) {
         const spread = i / layers;
@@ -83,11 +85,12 @@
         impression.setAttribute('transform', `translate(${dx} ${dy}) rotate(${angle} 55 180)`);
       }
     }
-    const reveal = ease(clamp((t-.66)/.34));
+    const firstName = ease(clamp((progress - .54) / .33));
+    const surname = ease(clamp((progress - .72) / .28));
     clips[0].setAttribute('x','166');
-    clips[0].setAttribute('width',String(393*reveal));
+    clips[0].setAttribute('width',String(393*firstName));
     clips[1].setAttribute('x','128');
-    clips[1].setAttribute('width',String(294*reveal));
+    clips[1].setAttribute('width',String(294*surname));
     get('ai-baselines').setAttribute('opacity',String(.3*fan));
     const percent = Math.round(progress*100);
     axis.value = String(percent);
@@ -97,28 +100,39 @@
     toggle.title = toggle.getAttribute('aria-label');
     toggle.classList.toggle('is-open', progress >= .5);
   }
-  function animateTo(target) {
+  function takeControl() {
+    observer?.disconnect();
+    observer = undefined;
+    figure.classList.remove('is-opening');
     cancelAnimationFrame(frame);
+  }
+
+  function animateTo(target, introductory = false) {
+    takeControl();
     if (reducedMotion.matches) { draw(target); return; }
     const start = progress;
-    const time = performance.now();
-    const duration = 540 + Math.abs(target-start)*260;
+    if (introductory) figure.classList.add('is-opening');
+    const time = performance.now() + (introductory ? 560 : 0);
+    const duration = introductory ? 2220 : 540 + Math.abs(target-start)*260;
     const step = now => {
       const t = clamp((now-time)/duration);
-      draw(mix(start,target,ease(t)));
+      if (now >= time) draw(mix(start,target,introductory ? t : ease(t)));
       if (t < 1) frame = requestAnimationFrame(step);
+      else figure.classList.remove('is-opening');
     };
     frame = requestAnimationFrame(step);
   }
   function activate() { animateTo(progress < .5 ? 1 : 0); }
   toggle.addEventListener('click', activate);
+  axis.addEventListener('focus', takeControl);
+  axis.addEventListener('pointerdown', takeControl);
   axis.addEventListener('input', () => {
-    cancelAnimationFrame(frame);
+    takeControl();
     draw(Number(axis.value)/100);
   });
   art.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
-    cancelAnimationFrame(frame);
+    takeControl();
     ignoreClick = false;
     gesture = { id:event.pointerId, x:event.clientX, initial:progress };
     art.setPointerCapture(event.pointerId);
@@ -135,7 +149,22 @@
     art.classList.remove('is-dragging');
   });
   art.addEventListener('click', () => { if (!ignoreClick) activate(); });
-  reducedMotion.addEventListener('change', () => cancelAnimationFrame(frame));
-  draw(Number(axis.value)/100);
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) {
+      takeControl();
+      draw(1);
+    }
+  });
+  draw(reducedMotion.matches ? 1 : 0);
   figure.classList.add('is-ready');
+  if (!reducedMotion.matches) {
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(([entry]) => {
+        if (observer && entry.intersectionRatio >= .25) animateTo(1, true);
+      }, {threshold: .25});
+      observer.observe(art);
+    } else {
+      animateTo(1, true);
+    }
+  }
 })();
