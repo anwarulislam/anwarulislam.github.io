@@ -83,73 +83,71 @@ Senior Frontend Engineer
 
 Dhaka, Bangladesh
 
-[anwar.bd](https://anwar.bd)  |  [github.com/anwarulislam](https://github.com/anwarulislam)  |  [linkedin.com/in/anwaarulislaam](https://www.linkedin.com/in/anwaarulislaam/)
+[anwar.bd](https://anwar.bd/) · [GitHub](https://github.com/anwarulislam) · [LinkedIn](https://www.linkedin.com/in/anwaarulislaam/)
 
-Frontend and product engineer with 8+ years of experience. Built a React and TypeScript editor for generative media at ImagineArt, refactored real-time workspace state at Hoppscotch, and published a native macOS utility for Raycast.
+Senior Frontend Engineer with 8+ years of experience building creative tools, developer tools, and learning platforms. Built the node-based AI image and video workflow editor for ImagineArt (100M users) with NextJS, TypeScript, and React Flow. Unified workspace sync across web and desktop at Hoppscotch, an open-source API platform with 3M developers and 81K GitHub stars. Led 10 Minute School’s migration from WordPress to Angular for a platform serving 3M users. Built timeline snapping for OpenCut and created Ruler, a Raycast screen-measurement extension with 45K+ users.
 
 ## Professional Experience
 
-### [Hoppscotch](https://hoppscotch.com/) | Product Engineer | Mar 2022 - Present
+### [Hoppscotch](https://hoppscotch.com/) | Product Engineer | Mar 2022 – Present
 
-Full-time Remote. Open-source API platform with [81K GitHub stars](https://github.com/hoppscotch/hoppscotch).
+Remote; contractual during the overlap with ImagineArt.
 
-- Consolidated workspace sync for collections, environments, request history, and settings into a shared layer for the web and desktop clients. Removed duplicate platform code and wired the shared state to GraphQL queries, mutations, and subscriptions. [Sync refactor](https://github.com/hoppscotch/hoppscotch/pull/6334)
-- Refactored the Vue and TypeScript real-time API workspace for WebSocket, SSE, Socket.IO, and MQTT, separating connection and message handling from the views. [Real-time refactor](https://github.com/hoppscotch/hoppscotch/pull/2228)
-- Fixed a startup race where requests could run before proxy settings loaded, while preserving request cancellation. Added unit tests for authentication helpers covering API keys, OAuth 2.0, and other auth methods. [Startup fix](https://github.com/hoppscotch/hoppscotch/pull/6333)  |  [Unit tests](https://github.com/hoppscotch/hoppscotch/pull/5211)
-- Implemented the initial client and server paths for mock servers as part of the team launch. Followed up with sample requests and the option to save mock URLs as environment variables. [Release notes](https://hoppscotch.com/releases/release-notes-v2025-11-0)
+Open-source API platform used by 3M developers, with 81K GitHub stars.
+- Contributed to Hoppscotch Model Context Protocol (MCP) server, giving AI coding assistants access to 53 tools for API workflows, including running requests, validating responses, and managing collections.
+- Replaced separate web and desktop sync implementations with a shared GraphQL layer for collections, environments, request history, and settings.
+- Refactored the Vue and TypeScript real-time API client to separate connection and message handling from the interface across four protocols: WebSocket, SSE, Socket.IO, and MQTT.
+- Built a modern GraphQL query and operation explorer and query builder.
+- Built the multi-tab API workspace and revamped the GraphQL editor so developers could explore schemas, construct queries, and switch between requests.
+- Implemented client and server components for the mock-server launch, including example responses and reusable mock URLs for testing against simulated endpoints.
 
-### [ImagineArt](https://www.imagine.art/) | Senior Frontend Engineer | 2025 - Jul 2026
+### [ImagineArt](https://www.imagine.art/workflow) | Senior Frontend Engineer (Full-time remote) | 2025 – Jul 2026
 
-Full-time, remote. Contractually consulting Hoppscotch during the concurrent role.
+Generative AI platform serving 100M users.
+- Built ImagineArt Workflows, a highly interdependent node-based editor that lets creators connect AI image and video generation steps on one canvas, using React, Next.js, TypeScript, and React Flow.
+- Implemented an AI custom character builder, voice clone generator, utility nodes, brand kit moodboards, and much more.
+- Built 10+ generative AI and media-editing nodes, including AI relighting, resizing, and multi-angle generation, alongside interactive cropping, levels adjustment, video trimming, and frame extraction.
+- Made loading 100s of nodes on the canvas instant, even in a collaborative environment.
+- Built a keyboard-first command palette with fuzzy search so creators could find and insert nodes and presets without leaving the canvas.
 
-- Built the frontend for [ImagineArt Workflows](https://www.imagine.art/workflow), a node-based editor for building image and video generation pipelines, using React, Next.js, TypeScript, and React Flow.
-- Implemented interactive crop, levels, and filter controls, video trimming and frame extraction, plus AI resize and relight nodes in the graph.
-- Made video previews load on hover to avoid eagerly loading video assets across the canvas. Integrated Brand Kit and Moodboard references into the editor so creators could reuse assets in their workflows.
-- Built a keyboard-first command palette with fuzzy search for finding and inserting nodes and presets without leaving the canvas.
+### [10 Minute School](https://10minuteschool.com/) | Software Engineer (Dhaka, Bangladesh) | Apr 2018 – Mar 2022
 
-### [10 Minute School](https://10minuteschool.com/) | Software Engineer (Full-time) | Apr 2018 - Mar 2022
+EdTech Pioneer in Bangladesh with 3M students
+- Progressed from back-end development intern to software engineer and led the migration from WordPress to a modular Angular progressive web app with lazy-loaded routes.
+- Built live streaming services at scale to serve 100,000 students.
+- Built server-rendered learning pages with Angular Universal and Next.js for a platform serving 3M users.
+- Built interactive SmartBooks, live-class comments, and a Node.js and Puppeteer service that generated personalized PDF course certificates.
+- Work experience with ReactJS, VueJS, and ElectronJS in various projects.
 
-- Led the move from WordPress to a modular Angular app with lazy-loaded routes and PWA support. Built server-rendered pages with Angular Universal and Next.js.
-- Built live-class comments, interactive SmartBooks, and a Node.js and Puppeteer service for PDF course certificates.
-
-## Selected Open Source Work
+## Open Source
 
 ### [Raycast](https://www.raycast.com/anwarulislam) | Extension Creator and Contributor | macOS
-
-- Built [Ruler](https://github.com/raycast/extensions/pull/7255/files), a screen-measurement tool with a magnifier and Swift/AppKit overlay invoked from React and TypeScript ([45K+ extension installs](https://www.raycast.com/anwarulislam/ruler)).
-- Added a selected-text action to [Google Gemini](https://github.com/raycast/extensions/pull/16744/files) ([90K+ installs](https://www.raycast.com/EvanZhouDev/raycast-gemini)) and an opt-in clipboard setting with native temporary-file capture to [ScreenOCR](https://github.com/raycast/extensions/pull/12479/files) ([66K+ installs](https://www.raycast.com/huzef44/screenocr)).
-- Co-developed a Swift and TypeScript command that extracts a palette from a selected image in [Color Picker](https://github.com/raycast/extensions/pull/17054) ([656K+ installs](https://www.raycast.com/thomas/color-picker)).
+- Built Ruler, a screen-measurement tool with a magnifier and Swift/AppKit overlay invoked from React and TypeScript (45K+ extension installs).
+- Added a selected-text action to Google Gemini (90K+ installs) and an opt-in clipboard setting with native temporary-file capture to ScreenOCR (66K+ installs).
+- Co-developed a Swift and TypeScript command that extracts a palette from a selected image in Color Picker (656K+ installs).
 
 ### [OpenCut](https://opencut.app/) | Contributor | Browser video editor
+- Ranked third on the official contributor roster with 53 contributions. The OpenCut repo has 99.3K GitHub stars.
+- Built timeline snapping and ripple editing in React and TypeScript; both merged into staging. Track-label scroll sync and timeline resizing merged into main.
 
-- Ranked [third on the official contributor roster](https://opencut.app/contributors) with 53 contributions. The [OpenCut repo](https://github.com/OpenCut-app/OpenCut) has 99.3K GitHub stars.
-- Built [timeline snapping](https://github.com/OpenCut-app/OpenCut/pull/266) and [ripple editing](https://github.com/OpenCut-app/OpenCut/pull/279) in React and TypeScript; both merged into staging. [Track-label scroll sync](https://github.com/OpenCut-app/OpenCut/pull/188) and [timeline resizing](https://github.com/OpenCut-app/OpenCut/pull/220) merged into main.
-
-### [Flameshot](https://github.com/flameshot-org/flameshot) | Contributor | Cross-platform screenshot tool
-
-- Moved General to the first tab in the C++/Qt settings window. [Merged pull request](https://github.com/flameshot-org/flameshot/pull/3655)  |  [31.7K GitHub stars](https://github.com/flameshot-org/flameshot)
+### [Flameshot](https://flameshot.org/) | Contributor | Cross-platform screenshot tool
+- Moved General to the first tab in the C++/Qt settings window. Merged pull request | 31.7K GitHub stars
 
 ## Earlier Experience
 
-### [10 Minute School](https://10minuteschool.com/) | Frontend Engineering Consultant | Mar 2022 - May 2024
+### [10 Minute School](https://10minuteschool.com/) | Frontend Engineering Consultant | Mar 2022 – May 2024
+- Continued as a frontend consultant after the full-time role, advising engineers on rendering performance, application architecture, and component reuse.
 
-- Advised engineers on frontend architecture, rendering performance, and component reuse after leaving the full-time role.
+### [Codementor](https://www.codementor.io/@anwarulislam) | Technical Mentor | Jul 2023 – Dec 2024
+- I have mentored over 300+ developers with 5-star reviews, providing expert guidance and support to individuals seeking help with coding and web projects.
 
-### [Codementor](https://www.codementor.io/) | Technical Mentor | Jul 2023 - Dec 2024
-
-- Coached developers in TypeScript, React, Vue, and Angular, including sessions helping an AstroLabs cohort structure and debug an Angular application.
-
-### [Banglalink](https://www.banglalink.net/en) | Contract Web Development
-
+### [Banglalink](https://www.banglalink.net/en) | Contract Web Development | Feb 2023 – May 2023
 - Contributed to the public website for Banglalink, one of Bangladesh’s largest mobile network operators.
 
 ## Technical Skills
-
-Frontend and state  TypeScript, JavaScript, React, Next.js, React Flow, Vue, Angular, Zustand, Redux, RxJS
-
-Testing and APIs  Vitest, Jest, GraphQL, REST, WebSocket, SSE, Socket.IO, MQTT, Node.js
-
-Desktop and media  Swift, AppKit, Raycast API, MediaStream, MediaRecorder, Web Audio API
+- **Frontend and state:** TypeScript, JavaScript, React, Next.js, React Flow, Vue, Angular, Zustand, Redux, RxJS
+- **Testing and APIs:** Vitest, Jest, GraphQL, REST, WebSocket, SSE, Socket.IO, MQTT, Node.js
+- **Desktop and media:** Swift, AppKit, Raycast API, MediaStream, MediaRecorder, Web Audio API
 </textarea><a href="./assets/resume.md" download>Download .md</a></div></details>
 <details class="tool"><summary>AI fact-check prompt <span aria-hidden="true">+</span></summary><div class="tool-body"><button type="button" data-copy="prompt-text">Copy verification prompt</button><textarea id="prompt-text" readonly spellcheck="false" aria-label="AI fact-check prompt" rows="10">Fact-check the public portfolio of Anwarul Islam (GitHub: anwarulislam). Use only publicly accessible sources. Read the sources yourself, link each finding to its source, and give a short table: claim | supported, partly supported, or not independently verifiable | evidence. If a source is unavailable, say so. Do not infer identity from a similar-looking name.
 
@@ -158,7 +156,10 @@ https://github.com/hoppscotch/hoppscotch/pull/6334
 https://github.com/hoppscotch/hoppscotch/pull/2228
 https://github.com/hoppscotch/hoppscotch/pull/5211
 
-2. ImagineArt: check what the public Workflows product page shows. Anwarul describes working on that editor, including editing controls, hover-loaded previews, and a keyboard-first command palette. Evaluate product features separately from individual authorship. A product page alone does not prove who implemented a feature.
+The résumé also lists a contribution to the Hoppscotch MCP server. Check the documented tools and profiles separately from individual authorship; an official tool count does not prove who implemented the tools. Look for public commit or pull request evidence before attributing that work.
+https://github.com/hoppscotch/hoppscotch-mcp-server
+
+2. ImagineArt: check what the public Workflows product page shows. Anwarul describes working on that editor, including editing controls, AI media nodes, and a keyboard-first command palette. Treat usage and performance figures as résumé claims unless a dated primary source corroborates them. Evaluate product features separately from individual authorship. A product page alone does not prove who implemented a feature.
 https://www.imagine.art/workflow
 
 3. OpenCut: check authorship, merged status, and target branch for timeline snapping (#266), ripple editing (#279), and track-label scroll sync/timeline resizing (#188). Check what the contributor roster actually counts.

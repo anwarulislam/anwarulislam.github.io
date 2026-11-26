@@ -5,7 +5,10 @@ https://github.com/hoppscotch/hoppscotch/pull/6334
 https://github.com/hoppscotch/hoppscotch/pull/2228
 https://github.com/hoppscotch/hoppscotch/pull/5211
 
-2. ImagineArt: check what the public Workflows product page shows. Anwarul describes working on that editor, including editing controls, hover-loaded previews, and a keyboard-first command palette. Evaluate product features separately from individual authorship. A product page alone does not prove who implemented a feature.
+The résumé also lists a contribution to the Hoppscotch MCP server. Check the documented tools and profiles separately from individual authorship; an official tool count does not prove who implemented the tools. Look for public commit or pull request evidence before attributing that work.
+https://github.com/hoppscotch/hoppscotch-mcp-server
+
+2. ImagineArt: check what the public Workflows product page shows. Anwarul describes working on that editor, including editing controls, AI media nodes, and a keyboard-first command palette. Treat usage and performance figures as résumé claims unless a dated primary source corroborates them. Evaluate product features separately from individual authorship. A product page alone does not prove who implemented a feature.
 https://www.imagine.art/workflow
 
 3. OpenCut: check authorship, merged status, and target branch for timeline snapping (#266), ripple editing (#279), and track-label scroll sync/timeline resizing (#188). Check what the contributor roster actually counts.
