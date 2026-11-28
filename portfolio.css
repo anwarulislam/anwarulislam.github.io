@@ -46,6 +46,11 @@ h1 em { display: inline-block; color: var(--red); font: italic normal 1.08em/.91
 .button:hover,button[data-copy]:hover { background: #e7e1d6; color: var(--ink); }
 .button.primary { background: var(--ink); color: #fff9eb; border-color: var(--ink); }
 .button.primary:hover { background: #4b3c32; }
+.nearo-feature { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); align-items: center; gap: clamp(24px,5vw,72px); padding: clamp(20px,4vw,54px); border: 1px solid var(--line); border-radius: 16px; background: #edf2e9; }
+.nearo-feature h3 { font-size: clamp(2rem,3.8vw,3.7rem); }
+.nearo-feature p { max-width: 40ch; color: var(--muted); margin: 1rem 0 1.4rem; }
+.nearo-feature img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px #20372c1f; }
+@media (max-width: 700px) { .nearo-feature { grid-template-columns: 1fr; } }
 .work { padding-bottom: 60px; }
 .section-head { border-top: 1px solid var(--ink); padding: 30px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
 .section-head h2,.resume h2 { font-size: clamp(2.75rem,5.2vw,5rem); }
